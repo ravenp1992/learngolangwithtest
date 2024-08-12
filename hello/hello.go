@@ -1,5 +1,7 @@
 package hello
 
+import "fmt"
+
 const (
 	tagalog = "Tagalog"
 	spanish = "Spanish"
@@ -32,4 +34,16 @@ func greetingPrefix(language string) (prefix string) {
 	}
 
 	return
+}
+
+func Greet(name string) string {
+	if name == "" {
+		name = "Guest"
+	}
+
+	return fmt.Sprintf("Welcome, %s", name)
+}
+
+func PrintMyName(name string) string {
+	return name
 }

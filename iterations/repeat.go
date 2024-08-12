@@ -1,8 +1,10 @@
 package iterations
 
+import "strings"
+
 // Repeat the character 5 times.
 func Repeat(character string, repeat int) string {
-	var repeated string
+	// var repeated string
 	// repeated := ""
 
 	// classic for loop
@@ -16,9 +18,11 @@ func Repeat(character string, repeat int) string {
 	// 	i++
 	// }
 
-	for range repeat {
-		repeated += character
-	}
+	// for range repeat {
+	// 	repeated += character
+	// }
 
-	return repeated
+	// return repeated
+
+	return strings.Repeat(character, repeat)
 }

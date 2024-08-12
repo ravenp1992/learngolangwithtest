@@ -22,7 +22,8 @@ func TestRepeat(t *testing.T) {
 // 136 ns/op means is our function takes on average 136 nanoseconds to run
 // Which is pretttty ok! To test it ran it 10000000 times.
 
-// NOTE: by default Benchmarks are run sequentially.
+// by default Benchmarks are run sequentially.
+
 func BenchmarkRepeat(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		Repeat("a", 8)

@@ -54,6 +54,33 @@ func TestHello(t *testing.T) {
 
 }
 
+func TestGreet(t *testing.T) {
+	t.Run("greeting with empty argument", func(t *testing.T) {
+		got := Greet("")
+		want := "Welcome, Guest"
+
+		if got != want {
+			t.Errorf("got %q want %q", got, want)
+		}
+	})
+
+	t.Run("greeting in tagalog", func(t *testing.T) {
+		got := Greet("Raven")
+		want := "Welcome, Raven"
+
+		assertCorrectMessage(t, got, want)
+	})
+}
+
+func TestPrintMyName(t *testing.T) {
+	got := PrintMyName("Raven")
+	want := "Raven"
+
+	if got != want {
+		t.Errorf("got %q want %q", got, want)
+	}
+}
+
 func assertCorrectMessage(t testing.TB, got, want string) {
 	// Is needed to tell the test suite that this method is a helper.
 	// By doing this, when it fails, tthe line number reported will be in our function
